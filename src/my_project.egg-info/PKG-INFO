@@ -1,0 +1,25 @@
+Metadata-Version: 2.2
+Name: my_project
+Version: 1.0
+Requires-Python: >=3.12
+Requires-Dist: requests
+Requires-Dist: jupyter
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: scipy
+Requires-Dist: scikit-learn
+Provides-Extra: dev
+Requires-Dist: tox; extra == "dev"
+Provides-Extra: lint
+Requires-Dist: mypy; extra == "lint"
+Requires-Dist: ruff; extra == "lint"
+Provides-Extra: test
+Requires-Dist: pytest>=8.3.3; extra == "test"
+Requires-Dist: pytest-cov>=5.0.0; extra == "test"
+Requires-Dist: coverage[toml]==7.3.1; extra == "test"
+Requires-Dist: pytest-html==4.1.1; extra == "test"
+Provides-Extra: doc
+Provides-Extra: build
+Requires-Dist: build>=1.2.2; extra == "build"
