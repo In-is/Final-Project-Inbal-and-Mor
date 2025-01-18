@@ -1,0 +1,20 @@
+﻿Gene,Functional Class
+histone3,Chromatin and Transcription Regulation
+atrx,Chromatin and Transcription Regulation
+bcor,Chromatin and Transcription Regulation
+bcorl1,Chromatin and Transcription Regulation
+pdgfra,RTK-RAS-PI3K Pathway
+met,RTK-RAS-PI3K Pathway
+ntrk123,RTK-RAS-PI3K Pathway
+egfr,RTK-RAS-PI3K Pathway
+pik3ca,RTK-RAS-PI3K Pathway
+pik3r1,RTK-RAS-PI3K Pathway
+braf,RTK-RAS-PI3K Pathway
+myc,RTK-RAS-PI3K Pathway
+mycn,RTK-RAS-PI3K Pathway
+nf1,RB1 and TP53 Pathways
+ccnd123cdk46,RB1 and TP53 Pathways
+cdkn2ab,RB1 and TP53 Pathways
+tp53,RB1 and TP53 Pathways
+ppm1d,RB1 and TP53 Pathways
+acvr1,Other Tumor Drivers
