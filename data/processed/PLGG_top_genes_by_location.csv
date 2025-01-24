@@ -1,0 +1,11 @@
+Brain Location,alk,braf,cdkn2a,fgfr1,kiaa1549,map2k1,myb,nf1,ntrk,prkca,ptpn11,ros1,tsc1
+cerebellum,0,0,0,0,0,0,0,0,0,0,1,0,0
+cerebral hemispheres,0,0,0,0,0,0,1,0,0,0,0,0,0
+hemispheric,0,0,0,0,0,0,0,0,0,0,0,1,0
+midline,0,0,0,0,0,0,0,0,1,0,0,0,0
+midline structures,0,0,0,1,0,0,0,0,0,0,0,0,0
+optic pathway,0,0,0,0,0,0,0,1,0,0,0,0,1
+posterior fossa/cerebellum,0,0,0,0,1,0,0,0,0,0,0,0,0
+supratentorial,0,1,0,0,0,1,0,0,0,0,0,0,0
+varied,1,0,1,0,0,0,0,0,0,0,0,0,0
+ventricle-associated regions,0,0,0,0,0,0,0,0,0,1,0,0,0
