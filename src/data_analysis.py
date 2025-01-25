@@ -1,8 +1,7 @@
-import matplotlib.pyplot as plt
-import numpy as np
 import os
+import numpy as np
 import pandas as pd
-import scipy.stats as stats
+import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Create products/HGG directory if it doesn't exist

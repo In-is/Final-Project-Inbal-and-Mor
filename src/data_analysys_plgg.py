@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import os
 
 # Create products/plgganalysis directory if it doesn't exist
-if not os.path.exists('./products/plgganalysis'):
-    os.makedirs('./products/plgganalysis')
+if not os.path.exists("./products/plgganalysis"):
+    os.makedirs("./products/plgganalysis")
 
 # Load the PLGG data
 plgg_file_path = "./data/raw/PLGG_DB.csv" 
@@ -39,9 +39,6 @@ plt.close()
 
 
 
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Load the PLGG data
 plgg_file_path = "./data/raw/PLGG_DB.csv"
@@ -69,7 +66,7 @@ plt.ylabel("Genes", fontsize=12)
 plt.xticks(rotation=45, ha="right", fontsize=10)
 plt.yticks(fontsize=10)
 plt.tight_layout()
-plt.savefig('./products/plgganalysis/tumor_types_gene_heatmap.png')
+plt.savefig("./products/plgganalysis/tumor_types_gene_heatmap.png")
 plt.close()
 
 # Step 2: Find the top 5 genes for each tumor type
@@ -92,9 +89,6 @@ top_genes_per_tumor.to_csv(top_genes_output_path)
 
 
 
-
-import pandas as pd
-import matplotlib.pyplot as plt
 
 # Load the PLGG data
 plgg_file_path = "./data/raw/PLGG_DB.csv" 
@@ -135,9 +129,7 @@ plt.close()
 
 
 
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
+
 
 # Load the PLGG data
 plgg_file_path = "./data/raw/PLGG_DB.csv" 
@@ -205,9 +197,6 @@ print(no_therapy_pathways)
 
 
 
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Load the split table
 file_path = "./data/raw/PLGG_DB_2.csv"

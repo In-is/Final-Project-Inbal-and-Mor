@@ -1,5 +1,7 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import os
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 
 # Create products/jointhgganalysis directory if it doesn't exist
 if not os.path.exists('./products/jointhgganalysis'):
@@ -20,7 +22,7 @@ plgg_grouped[["Gene", "Mutation Type"]].to_csv(output_grouped_path, index=False)
 print(f"Unique genes and mutations saved to: {output_grouped_path}")
 
 
-import pandas as pd
+
 
 # Load the HGG dataset
 hgg_file_path = "./data/processed/HGG_DB_cleaned.csv"
@@ -64,8 +66,6 @@ print(f"Processed data saved to: {output_path}")
 
 
 
-import pandas as pd
-import matplotlib.pyplot as plt
 
 # Step 1: Process PLGG dataset
 plgg_file_path = "./data/raw/PLGG_DB_2.csv"
@@ -199,9 +199,8 @@ else:
     print(f"No mutation data available for {gene_to_plot}.")
 
 
-import matplotlib.pyplot as plt
-from matplotlib.offsetbox import OffsetImage, AnnotationBbox
-import pandas as pd
+
+
 
 # Load the PLGG data
 plgg_file_path = "./data/raw/PLGG_DB.csv"  # Update path as needed
