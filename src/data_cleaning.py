@@ -2,6 +2,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+import os
+
+# Create products/datacleaning directory if it doesn't exist
+if not os.path.exists('./products/datacleaning'):
+    os.makedirs('./products/datacleaning')
 
 
 def setup_plot_params() -> None:
@@ -57,13 +62,15 @@ def handle_missing_values(df):
     plt.xlabel("Columns", fontsize=12)
     plt.xticks(rotation=90)
     plt.tight_layout()
-    plt.show()
+    plt.savefig('./products/datacleaning/missing_values_percentage.png')
+    plt.close()
 
     # Heatmap of missing values
     plt.figure(figsize=(12, 8))
     sns.heatmap(df.isnull(), yticklabels=False, cbar=True, cmap="coolwarm", cbar_kws={"label": "Missing Values"})
     plt.title("Missing Values Heatmap", fontsize=16)
-    plt.show()
+    plt.savefig('./products/datacleaning/missing_values_heatmap.png')
+    plt.close()
 
     # Replace missing values with 'None'
     df.fillna("None", inplace=True)
@@ -101,7 +108,8 @@ def handle_outliers(df):
     df.boxplot(column=numeric_cols)
     plt.xticks(rotation=45)
     plt.title("Box Plots for Numerical Columns")
-    plt.show()
+    plt.savefig('./products/datacleaning/numerical_boxplots.png')
+    plt.close()
 
     for col in numeric_cols:
         Q1 = df[col].quantile(0.25)

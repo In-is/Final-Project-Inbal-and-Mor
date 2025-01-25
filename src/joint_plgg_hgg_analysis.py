@@ -1,4 +1,9 @@
 import pandas as pd
+import os
+
+# Create products/jointhgganalysis directory if it doesn't exist
+if not os.path.exists('./products/jointhgganalysis'):
+    os.makedirs('./products/jointhgganalysis')
 
 plgg_file_path = "./data/raw/PLGG_DB.csv" 
 plgg_data = pd.read_csv(plgg_file_path)
@@ -143,7 +148,8 @@ plt.xticks(rotation=45, fontsize=10)
 plt.legend(title="Group", fontsize=10)
 plt.tight_layout()
 plt.grid(axis="y", linestyle="--", alpha=0.7)
-plt.show()
+plt.savefig('./products/jointhgganalysis/gene_frequency_comparison.png')
+plt.close()
 
 # Step 6: Compare Mutation Types for Shared Genes
 # Filter PLGG and HGG for shared genes
@@ -187,7 +193,8 @@ if not gene_mutations.empty:
     plt.legend(title="Group", fontsize=10)
     plt.tight_layout()
     plt.grid(axis="y", linestyle="--", alpha=0.7)
-    plt.show()
+    plt.savefig('./products/jointhgganalysis/mutation_type_comparison.png')
+    plt.close()
 else:
     print(f"No mutation data available for {gene_to_plot}.")
 
@@ -247,7 +254,8 @@ for gene, (plgg_loc, hgg_loc) in combined_mapping.items():
 # Finalize the plot
 ax.axis('off')
 plt.title("Shared Genes by Brain Location (PLGG vs HGG)", fontsize=16)
-plt.show()
+plt.savefig('./products/jointhgganalysis/brain_location_comparison.png')
+plt.close()
 
 
 

@@ -1,6 +1,11 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import os
+
+# Create products/plgganalysis directory if it doesn't exist
+if not os.path.exists('./products/plgganalysis'):
+    os.makedirs('./products/plgganalysis')
 
 # Load the PLGG data
 plgg_file_path = "./data/raw/PLGG_DB.csv" 
@@ -28,7 +33,8 @@ plt.ylabel("Genes", fontsize=14)
 plt.xticks(rotation=45, ha="right", fontsize=10)
 plt.yticks(fontsize=10)
 plt.tight_layout()
-plt.show()
+plt.savefig('./products/plgganalysis/brain_location_gene_heatmap.png')
+plt.close()
 
 
 
@@ -63,7 +69,8 @@ plt.ylabel("Genes", fontsize=12)
 plt.xticks(rotation=45, ha="right", fontsize=10)
 plt.yticks(fontsize=10)
 plt.tight_layout()
-plt.show()
+plt.savefig('./products/plgganalysis/tumor_types_gene_heatmap.png')
+plt.close()
 
 # Step 2: Find the top 5 genes for each tumor type
 top_genes_per_tumor = (
@@ -121,7 +128,8 @@ plt.ylabel("Mean Frequency (%)", fontsize=12)
 plt.xticks(rotation=45, ha="right", fontsize=10)
 plt.legend(title="Genes", bbox_to_anchor=(1.05, 1), loc="upper left", fontsize=10)
 plt.tight_layout()
-plt.show()
+plt.savefig('./products/plgganalysis/pathway_involvement_stacked.png')
+plt.close()
 
 
 
@@ -184,7 +192,8 @@ for i, row in pathway_counts.iterrows():
         color="black"
     )
 
-plt.show()
+plt.savefig('./products/plgganalysis/pathway_therapy_analysis.png')
+plt.close()
 
 # Step 4: Highlight pathways without therapy
 no_therapy_pathways = pathway_counts[pathway_counts["Therapy Available"] == 0]
@@ -220,7 +229,8 @@ plt.xticks(rotation=45, fontsize=10)
 plt.legend(title="Tumor Type", fontsize=10, bbox_to_anchor=(1.05, 1), loc="upper left")
 plt.grid(axis="y", linestyle="--", alpha=0.7)
 plt.tight_layout()
-plt.show()
+plt.savefig('./products/plgganalysis/age_tumor_frequency.png')
+plt.close()
 
 # -------- Graph 2: Line Chart - Average Mutation Frequency by Tumor Type Over Age Groups --------
 avg_mutation_by_age_tumor = (
@@ -243,5 +253,6 @@ plt.xticks(rotation=45, fontsize=10)
 plt.legend(title="Tumor Type", fontsize=10, bbox_to_anchor=(1.05, 1), loc="upper left")
 plt.grid(axis="y", linestyle="--", alpha=0.7)
 plt.tight_layout()
-plt.show()
+plt.savefig('./products/plgganalysis/age_mutation_frequency.png')
+plt.close()
 
