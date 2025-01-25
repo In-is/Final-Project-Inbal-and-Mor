@@ -8,6 +8,10 @@ import os
 if not os.path.exists('./products/datacleaning'):
     os.makedirs('./products/datacleaning')
 
+# Create products/datacleaning directory if it doesn't exist
+if not os.path.exists('./data/processed'):
+    os.makedirs('./data/processed')
+
 
 def setup_plot_params() -> None:
     """Set basic plot parameters"""
