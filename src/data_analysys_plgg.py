@@ -16,7 +16,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Constants
-visualization_DIR = Path('./visualization/plgganalysis')
+VISUALIZATION_DIR = Path('./visualization/plgganalysis')
 DATA_DIR = Path('./data')
 PROCESSED_DATA_DIR = DATA_DIR / 'processed'
 RAW_DATA_DIR = DATA_DIR / 'raw'
@@ -32,7 +32,7 @@ class PLGGAnalysis:
         self.split_data: Optional[pd.DataFrame] = None
         
         # Create output directory if it doesn't exist
-        visualization_DIR.mkdir(parents=True, exist_ok=True)
+        VISUALIZATION_DIR.mkdir(parents=True, exist_ok=True)
         
         # Set plot style
         plt.rcParams['figure.figsize'] = (12, 8)
@@ -76,7 +76,7 @@ class PLGGAnalysis:
             plt.xticks(rotation=45, ha="right", fontsize=10)
             plt.yticks(fontsize=10)
             plt.tight_layout()
-            plt.savefig(visualization_DIR / 'brain_location_gene_heatmap.png')
+            plt.savefig(VISUALIZATION_DIR / 'brain_location_gene_heatmap.png')
             plt.close()
             logger.info("Brain location heatmap created successfully")
         except Exception as e:
@@ -105,7 +105,7 @@ class PLGGAnalysis:
             plt.xticks(rotation=45, ha="right", fontsize=10)
             plt.yticks(fontsize=10)
             plt.tight_layout()
-            plt.savefig(visualization_DIR / 'tumor_types_gene_heatmap.png')
+            plt.savefig(VISUALIZATION_DIR / 'tumor_types_gene_heatmap.png')
             plt.close()
             
             # Find and save top genes per tumor
@@ -126,7 +126,7 @@ class PLGGAnalysis:
             print("="*80 + "\n")
             
             # Save results to text file for easier viewing
-            with open(visualization_DIR / 'PLGG_top_genes_by_tumor_type.txt', 'w') as f:
+            with open(VISUALIZATION_DIR / 'PLGG_top_genes_by_tumor_type.txt', 'w') as f:
                 f.write("TOP 5 GENES FOR EACH TUMOR TYPE\n")
                 f.write("="*80 + "\n")
                 f.write(top_genes_per_tumor.to_string())
@@ -166,7 +166,7 @@ class PLGGAnalysis:
             plt.xticks(rotation=45, ha="right", fontsize=10)
             plt.legend(title="Genes", bbox_to_anchor=(1.05, 1), loc="upper left", fontsize=10)
             plt.tight_layout()
-            plt.savefig(visualization_DIR / 'pathway_involvement_stacked.png')
+            plt.savefig(VISUALIZATION_DIR / 'pathway_involvement_stacked.png')
             plt.close()
             logger.info("Pathway involvement analysis completed successfully")
         except Exception as e:
@@ -218,7 +218,7 @@ class PLGGAnalysis:
                 )
             
             plt.tight_layout()
-            plt.savefig(visualization_DIR / 'pathway_therapy_analysis.png')
+            plt.savefig(VISUALIZATION_DIR / 'pathway_therapy_analysis.png')
             plt.close()
             
             # Print formatted results for pathways without therapy
@@ -231,7 +231,7 @@ class PLGGAnalysis:
             print("="*80 + "\n")
             
             # Save detailed analysis to text file
-            with open(visualization_DIR / 'therapy_analysis_summary.txt', 'w') as f:
+            with open(VISUALIZATION_DIR / 'therapy_analysis_summary.txt', 'w') as f:
                 f.write("THERAPY AVAILABILITY ANALYSIS\n")
                 f.write("="*80 + "\n\n")
                 f.write("All Pathways Summary:\n")
@@ -278,11 +278,11 @@ class PLGGAnalysis:
             plt.legend(title="Tumor Type", fontsize=10, bbox_to_anchor=(1.05, 1), loc="upper left")
             plt.grid(axis="y", linestyle="--", alpha=0.7)
             plt.tight_layout()
-            plt.savefig(visualization_DIR / 'age_tumor_frequency.png')
+            plt.savefig(VISUALIZATION_DIR / 'age_tumor_frequency.png')
             plt.close()
             
             # Save detailed analysis to text file
-            with open(visualization_DIR / 'age_distribution_analysis.txt', 'w') as f:
+            with open(VISUALIZATION_DIR / 'age_distribution_analysis.txt', 'w') as f:
                 f.write("TUMOR FREQUENCY BY AGE GROUP\n")
                 f.write("="*80 + "\n\n")
                 f.write("Detailed Distribution:\n")
@@ -320,7 +320,7 @@ class PLGGAnalysis:
             plt.legend(title="Tumor Type", fontsize=10, bbox_to_anchor=(1.05, 1), loc="upper left")
             plt.grid(axis="y", linestyle="--", alpha=0.7)
             plt.tight_layout()
-            plt.savefig(visualization_DIR / 'age_mutation_frequency.png')
+            plt.savefig(VISUALIZATION_DIR / 'age_mutation_frequency.png')
             plt.close()
             logger.info("Age mutation frequency analysis completed successfully")
         except Exception as e:
@@ -343,7 +343,7 @@ class PLGGAnalysis:
             print(genes_mutations.to_string(index=True))
             
             # Save to text file
-            with open(visualization_DIR / 'gene_mutation_analysis.txt', 'w') as f:
+            with open(VISUALIZATION_DIR / 'gene_mutation_analysis.txt', 'w') as f:
                 f.write("PLGG: Unique Genes and Mutations:\n")
                 f.write(genes_mutations.to_string(index=True))
             

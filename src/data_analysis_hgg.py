@@ -17,7 +17,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Constants
-visualization_DIR = Path('./visualization/hgganalysis')
+VISUALIZATION_DIR = Path('./visualization/hgganalysis')
 DATA_DIR = Path('./data')
 PROCESSED_DATA_DIR = DATA_DIR / 'processed'
 RAW_DATA_DIR = DATA_DIR / 'raw'
@@ -61,7 +61,7 @@ class HGGAnalysis:
         self.functional_classes: Dict[str, FunctionalClass] = {}
         
         # Create output directory if it doesn't exist
-        visualization_DIR.mkdir(parents=True, exist_ok=True)
+        VISUALIZATION_DIR.mkdir(parents=True, exist_ok=True)
         
         # Set plot style
         plt.rcParams['figure.figsize'] = (10, 6)
@@ -108,7 +108,7 @@ class HGGAnalysis:
         plt.xticks(rotation=45, ha="right", fontsize=12)
         plt.yticks(fontsize=10)
         plt.tight_layout()
-        plt.savefig(visualization_DIR / 'mutation_heatmap.png')
+        plt.savefig(VISUALIZATION_DIR / 'mutation_heatmap.png')
         plt.close()
 
     def analyze_top_genes(self, mutation_by_location: pd.DataFrame) -> None:
@@ -134,7 +134,7 @@ class HGGAnalysis:
         plt.xlabel("Number of Mutations", fontsize=12)
         plt.ylabel("Genes", fontsize=12)
         plt.tight_layout()
-        plt.savefig(visualization_DIR / 'top_10_genes_barplot.png')
+        plt.savefig(VISUALIZATION_DIR / 'top_10_genes_barplot.png')
         plt.close()
 
     def process_functional_classes(self) -> None:
@@ -164,7 +164,7 @@ class HGGAnalysis:
         plt.xlabel("Number of Genes", fontsize=14)
         plt.ylabel("Functional Class", fontsize=14)
         plt.tight_layout()
-        plt.savefig(visualization_DIR / 'functional_classes_barplot.png')
+        plt.savefig(VISUALIZATION_DIR / 'functional_classes_barplot.png')
         plt.close()
 
     def analyze_rare_mutations(self) -> None:
@@ -193,7 +193,7 @@ class HGGAnalysis:
         print("="*80 + "\n")
 
         # Save to text file
-        with open(visualization_DIR / 'rare_mutations_analysis.txt', 'w') as f:
+        with open(VISUALIZATION_DIR / 'rare_mutations_analysis.txt', 'w') as f:
             f.write("HGG: RARE MUTATIONS ANALYSIS (FREQUENCY 1-2)\n")
             f.write("="*80 + "\n\n")
             f.write(rare_mutations_table.to_string(index=False))
@@ -219,7 +219,7 @@ class HGGAnalysis:
         plt.tight_layout()
 
         # Adjust layout and save
-        plt.savefig(visualization_DIR / 'mutation_frequencies_scatter.png', 
+        plt.savefig(VISUALIZATION_DIR / 'mutation_frequencies_scatter.png', 
                    bbox_inches='tight', 
                    dpi=300)
         plt.close()
@@ -271,7 +271,7 @@ class HGGAnalysis:
         plt.ylabel("Tumor Location", fontsize=12)
         plt.xticks(rotation=45, ha="right", fontsize=10)
         plt.tight_layout()
-        plt.savefig(visualization_DIR / 'mutation_counts_by_location_class_heatmap.png')
+        plt.savefig(VISUALIZATION_DIR / 'mutation_counts_by_location_class_heatmap.png')
         plt.close()
 
     def create_age_location_mutation_plot(self) -> None:
@@ -292,7 +292,7 @@ class HGGAnalysis:
         plt.legend(title="3 Years Old")
         plt.xticks(rotation=45, ha="right")
         plt.tight_layout()
-        plt.savefig(visualization_DIR / 'avg_mutations_by_age_location.png')
+        plt.savefig(VISUALIZATION_DIR / 'avg_mutations_by_age_location.png')
         plt.close()
 
     def analyze_functional_classes_by_grade(self) -> None:
@@ -337,7 +337,7 @@ class HGGAnalysis:
         plt.xticks(rotation=45, ha="right")
         plt.legend(title="Tumor Grade", fontsize=12)
         plt.tight_layout()
-        plt.savefig(visualization_DIR / 'functional_classes_by_grade.png')
+        plt.savefig(VISUALIZATION_DIR / 'functional_classes_by_grade.png')
         plt.close()
 
         # Create heatmap
@@ -355,7 +355,7 @@ class HGGAnalysis:
         plt.ylabel("Tumor Grade", fontsize=12)
         plt.xticks(rotation=45, ha="right")
         plt.tight_layout()
-        plt.savefig(visualization_DIR / 'functional_classes_grade_heatmap.png')
+        plt.savefig(VISUALIZATION_DIR / 'functional_classes_grade_heatmap.png')
         plt.close()
 
 def main():
