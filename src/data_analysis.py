@@ -1,9 +1,13 @@
-import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
-import seaborn as sns
+import numpy as np
+import os
+import pandas as pd
 import scipy.stats as stats
-import re
+import seaborn as sns
+
+# Create products/HGG directory if it doesn't exist
+if not os.path.exists('./products/HGG'):
+    os.makedirs('./products/HGG')
 
 # Set basic plot parameters
 plt.rcParams['figure.figsize'] = (10, 6)
@@ -45,7 +49,8 @@ plt.ylabel("Genes", fontsize=12)
 plt.xticks(rotation=45, ha="right", fontsize=12)
 plt.yticks(fontsize=10)
 plt.tight_layout()
-plt.show()
+plt.savefig('./products/HGG/mutation_heatmap.png')
+plt.close()
 
 # Find the top 5 genes with the most mutations for each tumor location
 top_genes_per_location = (
@@ -84,9 +89,8 @@ plt.title("Top 10 Genes with Most Mutations", fontsize=16)
 plt.xlabel("Number of Mutations", fontsize=12)
 plt.ylabel("Genes", fontsize=12)
 plt.tight_layout()
-
-
-plt.show()
+plt.savefig('./products/HGG/top_10_genes_barplot.png')
+plt.close()
 
 
 
@@ -151,15 +155,12 @@ plt.title("Number of Genes per Functional Class", fontsize=16)
 plt.xlabel("Number of Genes", fontsize=14)
 plt.ylabel("Functional Class", fontsize=14)
 plt.tight_layout()
-plt.show()
+plt.savefig('./products/HGG/functional_classes_barplot.png')
+plt.close()
 
 
 
 
-
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 # Load the datasets
 db_file_path = r"./data/processed/HGG_DB_cleaned.csv"
@@ -217,7 +218,8 @@ plt.xlabel("Functional Class", fontsize=12)
 plt.ylabel("Tumor Location", fontsize=12)
 plt.xticks(rotation=45, ha="right", fontsize=10)
 plt.tight_layout()
-plt.show()
+plt.savefig('./products/HGG/mutation_counts_heatmap.png')
+plt.close()
 
 
 
@@ -242,16 +244,13 @@ plt.ylabel("Average Mutations", fontsize=14)
 plt.legend(title="3 Years Old")
 plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
-plt.show()
+plt.savefig('./products/HGG/avg_mutations_by_age_location.png')
+plt.close()
 
 
 
 
 
-
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Step 1: Load the dataset
 data_file_path = r"./data/processed/HGG_DB_cleaned.csv"
@@ -293,7 +292,8 @@ plt.ylabel("Proportion by Grade", fontsize=12)
 plt.xticks(rotation=45, ha="right")
 plt.legend(title="Tumor Grade", fontsize=12)
 plt.tight_layout()
-plt.show()
+plt.savefig('./products/HGG/functional_classes_by_grade.png')
+plt.close()
 
 # Step 5: Create a heatmap to show the relationship between Functional Class and Tumor Grade
 plt.figure(figsize=(14, 8))
@@ -310,16 +310,14 @@ plt.xlabel("Functional Class", fontsize=12)
 plt.ylabel("Tumor Grade", fontsize=12)
 plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
-plt.show()
+plt.savefig('./products/HGG/functional_classes_grade_heatmap.png')
+plt.close()
 
 
 
 
 
 # Rare Mutations
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Step 1: Load the dataset
 data_file_path = r"./data/processed/HGG_DB_cleaned.csv"
@@ -364,4 +362,5 @@ plt.ylabel("Frequency", fontsize=14)
 plt.xticks(rotation=90, fontsize=6)
 plt.legend()
 plt.tight_layout()
-plt.show()
+plt.savefig('./products/HGG/mutation_frequencies_scatter.png')
+plt.close()
