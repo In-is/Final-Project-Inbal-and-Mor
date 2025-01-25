@@ -1,0 +1,16 @@
+Gene,Mutation Type,Frequency (%),Tumor Types,Brain Location,Clinical Relevance,Pathway Involvement
+kiaa1549,fusion,75,pilocytic astrocytoma,posterior fossa/cerebellum,good prognosis if resectable,ras/mapk
+braf,v600e,40,pleomorphic xanthoastrocytoma,supratentorial,risk of transformation to high-grade glioma,ras/mapk
+fgfr1,tkd duplication,25,dysembryoplastic neuroepithelial tumor,midline structures,"variable, depends on co-mutations",ras/mapk
+fgfr1,tkd duplication,25,dysembryoplastic neuroepithelial tumor,midline structures,"variable, depends on co-mutations",pi3k/akt
+tsc1,snv,85,subependymal giant cell astrocytoma,optic pathway,"low risk, indolent",ras/mapk
+myb,fusion,10,angiocentric glioma,cerebral hemispheres,associated with benign outcomes,unknown
+prkca,snv,85,papillary glioneuronal tumor,ventricle-associated regions,good prognosis with targeted therapy,pi3k/akt
+map2k1,snv,55,multinodular and vacuolating neuronal tumor,supratentorial,low risk if no co-occurring mutations,ras/mapk
+nf1,loss of function,15,optic pathway glioma,optic pathway,requires monitoring for vision loss,ras/mapk
+cdkn2a,deletion,20,high-risk glioma subtypes,varied,linked to aggressive transformation,cell cycle regulation
+ntrk,fusion,5,glioneuronal tumors,midline,"rare, potential for targeted therapy",ras/mapk
+ros1,fusion,10,diffuse astrocytoma,hemispheric,rare fusion with mixed outcomes,unknown
+alk,fusion,5,infantile glioma,varied,requires specific targeting in infants,ras/mapk
+alk,fusion,5,infantile glioma,varied,requires specific targeting in infants,pi3k/akt
+ptpn11,snv,2,pilocytic astrocytoma,cerebellum,linked to progression in FGFR1-mutated cases,ras/mapk
