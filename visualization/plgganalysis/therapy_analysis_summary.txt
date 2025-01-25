@@ -1,0 +1,18 @@
+THERAPY AVAILABILITY ANALYSIS
+================================================================================
+
+All Pathways Summary:
+----------------------------------------
+  Pathway Involvement  Gene Count  Therapy Available
+cell cycle regulation           1                  0
+             pi3k/akt           3                  1
+             ras/mapk           9                  1
+              unknown           2                  0
+
+Pathways Without Available Therapies:
+----------------------------------------
+  Pathway Involvement  Gene Count  Therapy Available
+cell cycle regulation           1                  0
+              unknown           2                  0
+
+Total pathways without therapy: 2

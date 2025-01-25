@@ -4,11 +4,11 @@ import pandas as pd
 import seaborn as sns
 import os
 
-# Create products/datacleaning directory if it doesn't exist
-if not os.path.exists('./products/datacleaning'):
-    os.makedirs('./products/datacleaning')
+# Create visualization/datacleaning directory if it doesn't exist
+if not os.path.exists('./visualization/datacleaning'):
+    os.makedirs('./visualization/datacleaning')
 
-# Create products/datacleaning directory if it doesn't exist
+# Create visualization/datacleaning directory if it doesn't exist
 if not os.path.exists('./data/processed'):
     os.makedirs('./data/processed')
 
@@ -66,14 +66,14 @@ def handle_missing_values(df):
     plt.xlabel("Columns", fontsize=12)
     plt.xticks(rotation=90)
     plt.tight_layout()
-    plt.savefig('./products/datacleaning/missing_values_percentage.png')
+    plt.savefig('./visualization/datacleaning/missing_values_percentage.png')
     plt.close()
 
     # Heatmap of missing values
     plt.figure(figsize=(12, 8))
     sns.heatmap(df.isnull(), yticklabels=False, cbar=True, cmap="coolwarm", cbar_kws={"label": "Missing Values"})
     plt.title("Missing Values Heatmap", fontsize=16)
-    plt.savefig('./products/datacleaning/missing_values_heatmap.png')
+    plt.savefig('./visualization/datacleaning/missing_values_heatmap.png')
     plt.close()
 
     # Replace missing values with 'None'
@@ -112,7 +112,7 @@ def handle_outliers(df):
     df.boxplot(column=numeric_cols)
     plt.xticks(rotation=45)
     plt.title("Box Plots for Numerical Columns")
-    plt.savefig('./products/datacleaning/numerical_boxplots.png')
+    plt.savefig('./visualization/datacleaning/numerical_boxplots.png')
     plt.close()
 
     for col in numeric_cols:

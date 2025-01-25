@@ -1,0 +1,21 @@
+TUMOR FREQUENCY BY AGE GROUP
+================================================================================
+
+Detailed Distribution:
+Tumor Type  Diffuse Astrocytoma  Dysembryoplastic Neuroepithelial Tumor  High-Grade Glioma  Low-Grade Glioma  Optic Pathway Glioma  Pilocytic Astrocytoma  Varied Tumors
+Age Group                                                                                                                                                               
+0-5y                          0                                       0                  0                 1                     1                      2              0
+6-10y                         0                                       1                  0                 0                     0                      2              0
+11-15y                        0                                       0                  0                 0                     0                      1              0
+14+                           0                                       0                  1                 0                     0                      0              0
+16-20y                        1                                       0                  0                 0                     0                      0              0
+Varied                        0                                       0                  0                 0                     0                      0              1
+
+Total cases by age group:
+----------------------------------------
+      0-5y:     4 cases
+     6-10y:     3 cases
+    11-15y:     1 cases
+       14+:     1 cases
+    16-20y:     1 cases
+    Varied:     1 cases
