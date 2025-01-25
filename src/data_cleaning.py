@@ -43,7 +43,7 @@ def load_and_inspect_data(file_path):
     return df
 
 
-def handle_missing_values(df):
+def handle_missing_values(df, create_plots=True):
     """Handle missing values in the dataset"""
     # Identify missing values
     missing_value_summary = pd.DataFrame(
@@ -57,27 +57,34 @@ def handle_missing_values(df):
     print("\nMissing Value Summary:")
     print(missing_value_summary[missing_value_summary["Missing Count"] > 0])
 
-    # Visualize missing values
-    plt.figure(figsize=(12, 6))
-    sorted_summary = missing_value_summary.sort_values(by="Missing Percentage", ascending=False)
-    sorted_summary["Missing Percentage"].plot(kind="bar", color="skyblue")
-    plt.title("Percentage of Missing Values by Column", fontsize=16)
-    plt.ylabel("Percentage", fontsize=12)
-    plt.xlabel("Columns", fontsize=12)
-    plt.xticks(rotation=90)
-    plt.tight_layout()
-    plt.savefig('./visualization/datacleaning/missing_values_percentage.png')
-    plt.close()
+    if create_plots:
+        # Visualize missing values
+        plt.figure(figsize=(12, 6))
+        sorted_summary = missing_value_summary.sort_values(by="Missing Percentage", ascending=False)
+        sorted_summary["Missing Percentage"].plot(kind="bar", color="skyblue")
+        plt.title("Percentage of Missing Values by Column", fontsize=16)
+        plt.ylabel("Percentage", fontsize=12)
+        plt.xlabel("Columns", fontsize=12)
+        plt.xticks(rotation=90)
+        plt.tight_layout()
+        plt.savefig('./visualization/datacleaning/missing_values_percentage.png')
+        plt.close()
 
-    # Heatmap of missing values
-    plt.figure(figsize=(12, 8))
-    sns.heatmap(df.isnull(), yticklabels=False, cbar=True, cmap="coolwarm", cbar_kws={"label": "Missing Values"})
-    plt.title("Missing Values Heatmap", fontsize=16)
-    plt.savefig('./visualization/datacleaning/missing_values_heatmap.png')
-    plt.close()
+        # Heatmap of missing values
+        plt.figure(figsize=(12, 8))
+        sns.heatmap(df.isnull(), yticklabels=False, cbar=True, cmap="coolwarm", cbar_kws={"label": "Missing Values"})
+        plt.title("Missing Values Heatmap", fontsize=16)
+        plt.savefig('./visualization/datacleaning/missing_values_heatmap.png')
+        plt.close()
 
-    # Replace missing values with 'None'
-    df.fillna("None", inplace=True)
+    # Replace missing values with 'None' for object columns and median for numeric columns
+    numeric_cols = df.select_dtypes(include=[np.number]).columns
+    object_cols = df.select_dtypes(exclude=[np.number]).columns
+    
+    for col in numeric_cols:
+        df[col].fillna(df[col].median(), inplace=True)
+    for col in object_cols:
+        df[col].fillna("None", inplace=True)
 
     print("\nMissing Values After Replacement:")
     print(df.isnull().sum())
@@ -87,17 +94,17 @@ def handle_missing_values(df):
 
 def remove_duplicates(df):
     """Remove duplicate rows from the dataset"""
-    duplicates = df.duplicated().sum()
-    print("\nNumber of duplicate rows:", duplicates)
+    initial_rows = len(df)
+    df = df.drop_duplicates()
+    removed_rows = initial_rows - len(df)
 
-    if duplicates > 0:
-        df = df.drop_duplicates()
-        print("Duplicates removed. New shape:", df.shape)
+    print(f"\nRemoved {removed_rows} duplicate rows.")
+    print(f"Dataset shape after removing duplicates: {df.shape}")
 
     return df
 
 
-def handle_outliers(df):
+def handle_outliers(df, create_plots=True):
     """Handle outliers in numerical columns"""
     numeric_cols = df.select_dtypes(include=[np.number]).columns
 
@@ -108,12 +115,13 @@ def handle_outliers(df):
     print("\nBasic Statistics:")
     print(df[numeric_cols].describe())
 
-    plt.figure(figsize=(15, 5))
-    df.boxplot(column=numeric_cols)
-    plt.xticks(rotation=45)
-    plt.title("Box Plots for Numerical Columns")
-    plt.savefig('./visualization/datacleaning/numerical_boxplots.png')
-    plt.close()
+    if create_plots:
+        plt.figure(figsize=(15, 5))
+        df[numeric_cols].boxplot()
+        plt.xticks(rotation=45)
+        plt.title("Box Plots for Numerical Columns")
+        plt.savefig('./visualization/datacleaning/numerical_boxplots.png')
+        plt.close()
 
     for col in numeric_cols:
         Q1 = df[col].quantile(0.25)
@@ -152,23 +160,28 @@ def convert_data_types(df):
 
 def main():
     """Main function to run the data cleaning pipeline"""
-    # Setup
+    # Setup plot parameters
     setup_plot_params()
 
-    # Define input and output paths
-    input_path = "./data/raw/HGG_DB.csv"
-    output_path = "./data/processed/HGG_DB_cleaned.csv"
+    # Load and inspect data
+    file_path = "./data/raw/HGG_DB.csv"
+    df = load_and_inspect_data(file_path)
 
-    # Execute cleaning pipeline
-    df = load_and_inspect_data(input_path)
-    df = handle_missing_values(df)
+    # Handle missing values
+    df = handle_missing_values(df, create_plots=True)
+
+    # Remove duplicates
     df = remove_duplicates(df)
-    df = handle_outliers(df)
+
+    # Handle outliers
+    df = handle_outliers(df, create_plots=True)
+
+    # Convert data types
     df = convert_data_types(df)
 
     # Save cleaned data
-    df.to_csv(output_path, index=False)
-    print(f"\nCleaned dataset saved to '{output_path}'")
+    df.to_csv("./data/processed/HGG_DB_cleaned.csv", index=False)
+    print("\nCleaned data saved to ./data/processed/HGG_DB_cleaned.csv")
 
 
 if __name__ == "__main__":
