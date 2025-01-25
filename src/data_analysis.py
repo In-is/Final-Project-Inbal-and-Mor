@@ -358,7 +358,7 @@ class HGGAnalysis:
 def main():
     """Main execution function."""
     try:
-        # Initialize analysisy
+        # Initialize analysis
         analysis = HGGAnalysis(
             db_path=PROCESSED_DATA_DIR / 'HGG_DB_cleaned.csv',
             classes_path=RAW_DATA_DIR / 'Classes.organized.csv'
