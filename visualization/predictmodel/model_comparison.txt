@@ -1,0 +1,4 @@
+Model Performance Summary:
+               Accuracy  Precision    Recall  F1-score       AUC
+Random Forest  0.652174   0.643478  0.652174  0.647343  0.801856
+XGBoost        0.565217   0.664596  0.565217  0.601285  0.733493

@@ -1,0 +1,10 @@
+Tumor_Type,Location,Prevalence_Percentage,Common_Mutations
+PLGG,Cerebellum,18,"BRAF V600E, NF1"
+PLGG,Brainstem,12,KIAA1549-BRAF fusion
+PLGG,Hypothalamus/Optic Chiasm,32,"BRAF V600E, NF1"
+PLGG,Cerebrum,22,"BRAF V600E, FGFR1"
+HGG,Frontal Lobe,33,"IDH1, TP53, ATRX"
+HGG,Temporal Lobe,22,"IDH1, TP53"
+HGG,Parietal Lobe,18,"IDH1, TP53"
+HGG,Occipital Lobe,12,"IDH1, EGFR"
+HGG,Brainstem,13,"H3 K27M, TP53"

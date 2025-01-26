@@ -1,5 +1,2 @@
-data_analysis_hgg
-data_analysis_joint_plgg_hgg
-data_analysys_plgg
-data_cleaning
-main
+__init__
+data_analysis
