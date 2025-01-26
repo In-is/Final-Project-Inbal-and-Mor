@@ -71,8 +71,8 @@ class PLGGAnalysis:
             )
             
             plt.title("Heatmap of Gene Frequencies by Brain Location", fontsize=18)
-            plt.xlabel("Brain Location", fontsize=14)
-            plt.ylabel("Genes", fontsize=14)
+            plt.xlabel("Genes", fontsize=14)
+            plt.ylabel("Brain Location", fontsize=14)
             plt.xticks(rotation=45, ha="right", fontsize=10)
             plt.yticks(fontsize=10)
             plt.tight_layout()
