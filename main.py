@@ -1,13 +1,17 @@
 import logging
 from pathlib import Path
 import sys
+import os
 import time
 
+# Add the project root directory to the Python path
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+
 # Import analysis modules
-from data_analysis.data_cleaning import main as clean_data
-from data_analysis.data_analysis_hgg import main as hgg_analysis
-from data_analysis.data_analysys_plgg import main as plgg_analysis
-from data_analysis.data_analysis_joint_plgg_hgg import JointPLGGHGGAnalysis
+from src.data_analysis.data_cleaning import main as clean_data
+from src.data_analysis.data_analysis_hgg import main as hgg_analysis
+from src.data_analysis.data_analysys_plgg import main as plgg_analysis
+from src.data_analysis.data_analysis_joint_plgg_hgg import JointPLGGHGGAnalysis
 
 # Configure paths
 DATA_DIR = Path('./data')
