@@ -1,0 +1,15 @@
+PLGG: Unique Genes and Mutations:
+        Gene     Mutation Type
+0        alk            fusion
+1       braf             v600e
+2     cdkn2a          deletion
+3      fgfr1   tkd duplication
+4   kiaa1549            fusion
+5     map2k1               snv
+6        myb            fusion
+7        nf1  loss of function
+8       ntrk            fusion
+9      prkca               snv
+10    ptpn11               snv
+11      ros1            fusion
+12      tsc1               snv

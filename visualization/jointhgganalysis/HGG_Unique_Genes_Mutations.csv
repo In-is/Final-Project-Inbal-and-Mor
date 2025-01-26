@@ -1,0 +1,137 @@
+Gene,Mutation Type
+acvr1,G328V
+acvr1,G328W
+acvr1,G328E
+acvr1,R258G
+acvr1,G356D
+acvr1,R206H
+histone3,H3.1K27M
+histone3,H3.3K27M
+histone3,H3.3G34R
+atrx,T1610R
+atrx,D2144G
+atrx,gC335>FR
+atrx,D1791H (LOH)
+atrx,SV
+atrx,R188*
+atrx,E533_S549fs
+atrx,R2111* (LOH)
+atrx,K1449_E1450fs (LOH)
+atrx,A451fs (LOH)
+atrx,E327_E328fs
+atrx,L359_I360fs (LOH)
+atrx,L2112_F2113fs (LOH)
+bcor,K175fs
+bcor,R1480*
+bcor,H1468_C1471>H (LOH)
+bcor,T200_P201fs
+bcor,P152fs
+bcor,P602fs (LOH)
+bcor,R1164* (LOH)
+bcor,R1164*
+bcor,K1260_S1261fs
+bcorl1,R21H
+bcorl1,R609*
+bcorl1,"Y1692*,E1255_E1256>E"
+myc,Amp
+mycn,Amp
+pdgfra,Amp
+pdgfra,AMP;SV (DIP2C_PDGFRA)
+pdgfra,N659K
+pdgfra,A529>15aa
+pdgfra,SV
+pdgfra,"RVTFinsA491,Amp"
+pdgfra,N468S
+pdgfra,Amp;I843_M844>M
+pdgfra,D583_E587>E
+met,Amp
+ntrk123,SV (BTBD1_NTRK3)
+ntrk123,SV (VCL_NTRK2)
+ntrk123,SV (AGBL4_NTRK2)
+ntrk123,SV (TPM3_NTRK1)
+ntrk123,SV (ETV6_NTRK3)
+egfr,G598V (LOH)
+egfr,Amp
+egfr,"SV,Amp"
+egfr,D770>ASVD
+egfr,R108K
+egfr,R222C
+pik3ca,E545K
+pik3ca,H1047R
+pik3ca,I102_V105del
+pik3ca,P449_L456>L
+pik3ca,E110del
+pik3ca,Q546K
+pik3ca,E726A
+pik3ca,R88Q
+pik3r1,T576_R577>R
+pik3r1,L380del
+pik3r1,K567_I571>I
+pik3r1,K575_R577del
+pik3r1,E451_Y452del
+pik3r1,EYinsN453
+braf,V600E
+nf1,I719fs (LOH)
+nf1,"R816*,SV (NF1_CNTN5)"
+nf1,"gR416*,F2176fs"
+nf1,Del
+nf1,R2237* (LOH)
+nf1,L952fs
+nf1,S1053*
+ccnd123cdk46,Amp (CDK4)
+ccnd123cdk46,Del (CCND1)
+ccnd123cdk46,Amp (CDK6)
+ccnd123cdk46,Amp (CCND2)
+ccnd123cdk46,Amp (CCND3)
+ccnd123cdk46,Amp (CCND2/3)
+ccnd123cdk46,Amp (CCND1)
+ccnd123cdk46,"Amp (CCND2, CDK4)"
+ccnd123cdk46,Amp (CCND2/CCND3)
+cdkn2ab,Del
+tp53,R273C
+tp53,G245C
+tp53,E180fs
+tp53,P47_F54fs (LOH)
+tp53,R158G (LOH)
+tp53,A88fs
+tp53,R213*
+tp53,R156_R158>R (LOH)
+tp53,gE224A  (LOH)
+tp53,"R213*,L252P  (LOH)"
+tp53,"R273C,Q144*"
+tp53,"E339*,R248W"
+tp53,S241F
+tp53,R273H
+tp53,S241Y
+tp53,R273C (LOH)
+tp53,M237I (LOH)
+tp53,R248Q (LOH)
+tp53,"R273C,K120M"
+tp53,V173A
+tp53,H193Y
+tp53,C176Y
+tp53,L130_N131>L
+tp53,R174_E180>R
+tp53,Y163C
+tp53,C135W (LOH)
+tp53,R175H (LOH)
+tp53,V157F (LOH)
+tp53,R175H
+tp53,C135W
+tp53,R273H (LOH)
+tp53,R249S (LOH)
+tp53,gR248Q
+tp53,gR196* (LOH)
+tp53,gR248Q (LOH)
+tp53,"Q167*,R273H"
+tp53,G245S (LOH)
+tp53,R248W
+tp53,E198_G199fs
+tp53,R342*
+tp53,H179D (LOH)
+ppm1d,Q404*
+ppm1d,S516*
+ppm1d,E405*
+ppm1d,W427*
+ppm1d,I466_P467fs
+ppm1d,P417fs

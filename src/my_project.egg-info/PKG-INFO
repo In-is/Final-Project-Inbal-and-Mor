@@ -2,6 +2,7 @@ Metadata-Version: 2.2
 Name: my_project
 Version: 1.0
 Requires-Python: >=3.12
+Requires-Dist: mypy
 Requires-Dist: requests
 Requires-Dist: jupyter
 Requires-Dist: pandas
