@@ -4,10 +4,10 @@ import sys
 import time
 
 # Import analysis modules
-from data_cleaning import main as clean_data
-from data_analysis_hgg import main as hgg_analysis
-from data_analysys_plgg import main as plgg_analysis
-from data_analysis_joint_plgg_hgg import JointPLGGHGGAnalysis
+from data_analysis.data_cleaning import main as clean_data
+from data_analysis.data_analysis_hgg import main as hgg_analysis
+from data_analysis.data_analysys_plgg import main as plgg_analysis
+from data_analysis.data_analysis_joint_plgg_hgg import JointPLGGHGGAnalysis
 
 # Configure paths
 DATA_DIR = Path('./data')

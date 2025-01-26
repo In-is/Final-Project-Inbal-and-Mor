@@ -2,13 +2,9 @@ import unittest
 import pandas as pd
 import numpy as np
 from pathlib import Path
-import sys
 import os
 
-# Add the src directory to the Python path so we can import the module
-sys.path.append(str(Path(__file__).parent.parent / 'src'))
-
-from data_cleaning import (
+from data_analysis.data_cleaning import (
     handle_missing_values,
     remove_duplicates,
     handle_outliers,

@@ -43,7 +43,7 @@ class JointPLGGHGGAnalysis:
             self.plgg_grouped = self.plgg_data.groupby(["Gene", "Mutation Type"], as_index=False).first()
             
             # Save unique genes and mutations
-            output_grouped_path = "PLGG_Unique_Genes_Mutations.csv"
+            output_grouped_path = VISUALIZATION_DIR / "PLGG_Unique_Genes_Mutations.csv"
             self.plgg_grouped[["Gene", "Mutation Type"]].to_csv(output_grouped_path, index=False)
             logger.info(f"PLGG unique genes and mutations saved to: {output_grouped_path}")
             
@@ -102,7 +102,7 @@ class JointPLGGHGGAnalysis:
             
             # Save unique genes and mutations
             hgg_unique = self.hgg_long[["Gene", "Mutation Type"]].drop_duplicates()
-            output_path = "HGG_Unique_Genes_Mutations.csv"
+            output_path = VISUALIZATION_DIR / "HGG_Unique_Genes_Mutations.csv"
             hgg_unique.to_csv(output_path, index=False)
             logger.info(f"HGG unique genes and mutations saved to: {output_path}")
         except Exception as e:
