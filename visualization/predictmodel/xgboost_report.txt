@@ -1,4 +1,4 @@
-XGBoost Classification Report:
+Xgboost Classification Report:
 
               precision    recall  f1-score   support
 
