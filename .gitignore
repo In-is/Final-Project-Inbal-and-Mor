@@ -1,1 +1,7 @@
 /venv
+src/__pycache__/__init__.cpython-312.pyc
+src/data_analysis/__pycache__/__init__.cpython-312.pyc
+src/data_analysis/__pycache__/data_analysis_hgg.cpython-312.pyc
+src/data_analysis/__pycache__/data_analysis_joint_plgg_hgg.cpython-312.pyc
+src/data_analysis/__pycache__/data_analysis_plgg.cpython-312.pyc
+src/data_analysis/__pycache__/data_cleaning.cpython-312.pyc
