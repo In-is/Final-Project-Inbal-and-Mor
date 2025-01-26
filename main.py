@@ -12,6 +12,7 @@ from src.data_analysis.data_cleaning import main as clean_data
 from src.data_analysis.data_analysis_hgg import main as hgg_analysis
 from src.data_analysis.data_analysis_plgg import main as plgg_analysis
 from src.data_analysis.data_analysis_joint_plgg_hgg import JointPLGGHGGAnalysis
+from src.data_analysis.predictmodels import PredictiveModeling
 
 # Configure paths
 DATA_DIR = Path('./data')
@@ -37,6 +38,7 @@ def run_pipeline():
     2. HGG Analysis
     3. PLGG Analysis
     4. Joint PLGG-HGG Analysis
+    5. Predictive Modeling
     """
     start_time = time.time()
     
@@ -61,6 +63,12 @@ def run_pipeline():
         joint_analysis = JointPLGGHGGAnalysis()
         joint_analysis.main()
         logger.info("Joint PLGG-HGG analysis completed successfully")
+
+        # Step 5: Predictive Modeling
+        logger.info("Starting predictive modeling analysis...")
+        predictive_modeling = PredictiveModeling()
+        predictive_modeling.main()
+        logger.info("Predictive modeling analysis completed successfully")
 
         # Calculate and log total execution time
         execution_time = time.time() - start_time

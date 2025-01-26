@@ -3,6 +3,11 @@ Name: my_project
 Version: 1.0
 Requires-Python: >=3.12
 Requires-Dist: mypy
+Requires-Dist: plotly
+Requires-Dist: wordcloud
+Requires-Dist: imblearn
+Requires-Dist: xgboost
+Requires-Dist: openpyxl
 Requires-Dist: requests
 Requires-Dist: jupyter
 Requires-Dist: pandas

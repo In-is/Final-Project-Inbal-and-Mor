@@ -8,6 +8,11 @@ requires-python = ">=3.12"
 version = "1.0"
 dependencies = [
     "mypy",
+    "plotly",
+    "wordcloud",
+    "imblearn",
+    "xgboost",
+    "openpyxl",
     "requests",
     "jupyter",
     # Data analysis packages
