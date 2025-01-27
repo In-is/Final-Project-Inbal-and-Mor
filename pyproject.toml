@@ -15,6 +15,7 @@ dependencies = [
     "openpyxl",
     "requests",
     "jupyter",
+    "kaleido",  # Required for saving plotly figures as static images
     # Data analysis packages
     "pandas",
     "numpy",

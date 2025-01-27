@@ -20,6 +20,7 @@ VISUALIZATION_DIR = Path('./visualization/jointhgganalysis')
 PLGG_FILE = RAW_DATA_DIR / "PLGG_DB.csv"
 PLGG_FILE_2 = RAW_DATA_DIR / 'PLGG_DB_2.csv'
 HGG_FILE = PROCESSED_DATA_DIR / "HGG_DB_cleaned.csv"
+LOCATIONS_FILE = RAW_DATA_DIR / "PLGG_HGG_locations_with_mutations.csv"
 
 class JointPLGGHGGAnalysis:
     """Class for analyzing and comparing Pediatric Low-Grade Glioma (PLGG) and High-Grade Glioma (HGG) genetic data."""
@@ -31,6 +32,7 @@ class JointPLGGHGGAnalysis:
         self.plgg_grouped: Optional[pd.DataFrame] = None
         self.hgg_long: Optional[pd.DataFrame] = None
         self.shared_genes: Optional[Set[str]] = None
+        self.locations_data: Optional[pd.DataFrame] = None
         
         # Create output directory if it doesn't exist
         VISUALIZATION_DIR.mkdir(parents=True, exist_ok=True)
@@ -230,17 +232,57 @@ class JointPLGGHGGAnalysis:
             logger.error(f"Error analyzing mutation types: {e}")
             raise
 
-    def main(self):
-        """Main execution function."""
+    def analyze_brain_locations(self) -> None:
+        """Analyze and visualize the prevalence of PLGG and HGG tumors by brain location."""
+        try:
+            # Load the locations data
+            self.locations_data = pd.read_csv(LOCATIONS_FILE)
+            logger.info("Brain locations data loaded successfully")
+
+            # Group the data by tumor type
+            plgg_data = self.locations_data[self.locations_data["Tumor_Type"] == "PLGG"]
+            hgg_data = self.locations_data[self.locations_data["Tumor_Type"] == "HGG"]
+
+            # Create the visualization
+            plt.figure(figsize=(12, 6))
+            
+            # Plot PLGG and HGG data
+            plt.bar(plgg_data["Location"], plgg_data["Prevalence_Percentage"], 
+                   label="PLGG", alpha=0.7)
+            plt.bar(hgg_data["Location"], hgg_data["Prevalence_Percentage"], 
+                   label="HGG", alpha=0.7)
+
+            # Customize the plot
+            plt.title("Prevalence of PLGG and HGG Tumors by Brain Location")
+            plt.xlabel("Brain Location")
+            plt.ylabel("Prevalence Percentage")
+            plt.xticks(rotation=45)
+            plt.legend()
+            plt.grid(axis="y", linestyle="--", alpha=0.5)
+            plt.tight_layout()  # Ensure labels are visible
+
+            # Save the plot
+            output_path = VISUALIZATION_DIR / "brain_locations_prevalence.png"
+            plt.savefig(output_path, dpi=300, bbox_inches='tight')
+            plt.close()
+            
+            logger.info(f"Brain locations prevalence plot saved to: {output_path}")
+        except Exception as e:
+            logger.error(f"Error in brain locations analysis: {e}")
+            raise
+
+    def main(self) -> None:
+        """Run all analyses."""
         try:
             self.load_and_process_plgg_data()
             self.load_and_process_hgg_data()
             self.analyze_gene_overlap()
             self.analyze_gene_frequencies()
             self.analyze_mutation_types()
+            self.analyze_brain_locations()
             logger.info("Joint PLGG-HGG analysis completed successfully")
         except Exception as e:
-            logger.error(f"Error in main execution: {e}")
+            logger.error(f"Error in joint analysis: {e}")
             raise
 
 if __name__ == "__main__":

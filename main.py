@@ -13,6 +13,7 @@ from src.data_analysis.data_analysis_hgg import main as hgg_analysis
 from src.data_analysis.data_analysis_plgg import main as plgg_analysis
 from src.data_analysis.data_analysis_joint_plgg_hgg import JointPLGGHGGAnalysis
 from src.data_analysis.predictmodels import PredictiveModeling
+from src.for_fun.fun_images_generator import main as fun_visualizations
 
 # Configure paths
 DATA_DIR = Path('./data')
@@ -39,6 +40,7 @@ def run_pipeline():
     3. PLGG Analysis
     4. Joint PLGG-HGG Analysis
     5. Predictive Modeling
+    6. Fun Visualizations
     """
     start_time = time.time()
     
@@ -69,6 +71,11 @@ def run_pipeline():
         predictive_modeling = PredictiveModeling()
         predictive_modeling.main()
         logger.info("Predictive modeling analysis completed successfully")
+
+        # Step 6: Fun Visualizations
+        logger.info("Starting fun visualizations...")
+        fun_visualizations()
+        logger.info("Fun visualizations completed successfully")
 
         # Calculate and log total execution time
         execution_time = time.time() - start_time
