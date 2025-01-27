@@ -1,75 +1,155 @@
-:nerd_face:
-A well-written README provides essential information about your project,
-such as installation instructions, usage examples and contributions guidelines.
+# Brain Tumor Analysis Project
 
-# List of usefull commands:
-all command should run under project root/working-directory
+## Table of Contents
+- [Project Overview](#project-overview)
+  - [Analyze Genetic Data](#analyze-genetic-data)
+  - [Predictive Modeling](#predictive-modeling)
+  - [Data Visualization](#data-visualization)
+  - [Clinical Insights](#clinical-insights)
+- [Installation Guide](#installation-guide)
+  - [Prerequisites](#prerequisites)
+  - [Setting Up the Project](#setting-up-the-project)
+- [Project Structure](#project-structure)
+- [Configuration Files](#configuration-files)
+- [Core Components](#core-components)
+  - [Main Execution File](#main-execution-file)
+  - [Source Code Modules](#source-code-modules)
+  - [Testing](#testing)
+- [Usage](#usage)
 
-## On first run:
-```bash 
-#install Virtualenv is - a tool to set up your Python environments
-pip install virtualenv
-#create virtual environment (serve only this project):
-python -m venv venv
-#activate virtual environment
-.\venv\Scripts\activate 
-# + (venv) should appear as prefix to all command (run next command just after activating venv)
-#update venv's python package-installer (pip) to its latest version
-pip install --upgrade pip
-#install projects packages
-pip install -e .[dev]     
-``` 
+## Project Overview
+This project is a comprehensive data analysis and machine learning pipeline focused on studying brain tumors, specifically comparing High-Grade Glioma (HGG) and Pediatric Low-Grade Glioma (PLGG). The project aims to:
 
-## Modify package dependencies (add/remove/update external modules/packages):
-#### Add new module:
-1. Add package to pyproject.toml
-2. Run:
-```bash 
-pip install -e .[dev]
-``` 
+1. **Analyze Genetic Data**: Compare and analyze genetic mutations between HGG and PLGG tumors to understand their differences and similarities.
 
-#### Remove new module:
-1. Remove the package from pyproject.toml
-2. Run:
-```bash 
-pip uninstall <package-name>
+2. **Predictive Modeling**: Develop machine learning models (Random Forest and XGBoost) to:
+   - Predict tumor characteristics
+   - Identify important genetic markers
+   - Analyze tumor locations and their relationship with mutations
+
+3. **Data Visualization**: Generate comprehensive visualizations to:
+   - Compare mutation patterns between HGG and PLGG
+   - Visualize tumor locations and their genetic profiles
+   - Present model performance and predictions
+
+4. **Clinical Insights**: Help researchers and clinicians better understand:
+   - The genetic differences between HGG and PLGG
+   - The relationship between tumor location and genetic mutations
+   - Potential predictive markers for tumor classification
+
+The project combines data cleaning, statistical analysis, machine learning, and visualization techniques to provide insights into brain tumor genetics and classification.
+
+## Installation Guide
+
+### Prerequisites
+1. Install Python 3.12 or later:
+   - Visit [Python's official website](https://www.python.org/downloads/)
+   - Download and run the installer for your operating system
+   - During installation, make sure to check "Add Python to PATH"
+
+### Setting Up the Project
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/In-is/Final-Project-Inbal-and-Mor.git
+   cd Final-Project-Inbal-and-Mor
+   ```
+
+2. Create a virtual environment:
+   ```bash
+   # Navigate to the project directory
+   python -m venv venv
+   ```
+
+3. Activate the virtual environment:
+   ```bash
+   # On Windows
+   .\venv\Scripts\activate
+
+   # On Mac/Linux
+   source venv/bin/activate
+   ```
+
+4. Install project dependencies:
+   ```bash
+   pip install -e .
+   ```
+
+## Project Structure
+
 ```
-note: if you're don't remember the exact package name copy it from: 
+├── data/                  # Data directory
+│   ├── raw/              # Raw input data
+│   └── processed/        # Cleaned and processed data
+├── logs/                 # Log files directory
+├── notebooks/           # Jupyter notebooks for exploration
+├── src/                 # Source code
+│   ├── data_analysis/   # Analysis modules
+│   └── for_fun/        # Additional visualizations
+├── tests/              # Test files
+└── visualization/      # Generated visualizations
+```
+
+## Configuration Files
+
+- `pyproject.toml`: Main project configuration file that specifies:
+  - Python version requirements (Python 3.12+)
+  - Project dependencies
+  - Development dependencies
+  - Build system requirements
+  - Code formatting settings
+
+- `pytest.ini`: Configuration for pytest testing framework
+- `setup.cfg`: Additional project configuration settings
+
+## Core Components
+
+### Main Execution File
+`main.py`: Orchestrates the entire analysis pipeline, including:
+- Data cleaning
+- HGG Analysis
+- PLGG Analysis
+- Joint PLGG-HGG Analysis
+- Predictive Modeling
+- Visualization Generation
+
+### Source Code Modules
+
+#### Data Analysis (`src/data_analysis/`)
+- `data_cleaning.py`: Preprocesses and cleans raw data
+- `data_analysis_hgg.py`: Analyzes High-Grade Glioma data
+- `data_analysis_plgg.py`: Analyzes Pediatric Low-Grade Glioma data
+- `data_analysis_joint_plgg_hgg.py`: Performs comparative analysis between HGG and PLGG
+- `predictmodels.py`: Implements predictive modeling capabilities
+
+#### Visualization (`src/for_fun/`)
+- `fun_images_generator.py`: Creates additional visualizations and graphics
+
+### Testing
+The `tests/` directory contains unit tests and integration tests for various components of the project.
+
+## Usage
+
+To run the complete analysis pipeline:
 ```bash
-pip list
+python main.py
 ```
 
-#### Steps in case of a package failure:
-Cases like package installation interuppted in the middle or something like that
-1. Try to remove package and install it again.
-2. If it doesn't help delete venv folder 
-3. repeat 'On first run' steps
+This will execute:
+1. Data cleaning procedures
+2. Individual analyses for HGG and PLGG
+3. Joint comparative analysis
+4. Predictive modeling
+5. Generation of visualizations
 
+Results and logs will be saved in their respective directories:
+- Processed data: `data/processed/`
+- Log files: `logs/`
+- Visualizations: `visualization/`
 
-## Health check (Lint/Tests/Tests-Coverage):
-#### Lint Project:
-Check formatting, type hinting, lint code & docstrings
+For development and testing:
 ```bash
-tox run -e lint
-```
-#### Test Project: 
-Run all tests on diffrent python versions and produce tests-coverage and tests-results reports (make sure tested versions installed before run):
-```bash
-tox run -f test
-```
-#### Lint and Test project (on diffrent python versions):
-```bash
-tox run
-```
+# Run tests
+pytest
 
-## Build/pack the project (should run on every version change)
-```bash
-python -m build
-```
-
-### $${\color{red} TBD}$$:
-#### Package documentation:
-```bash
-tox run -e docs
-```
-
+# Run linting
+ruff check .
