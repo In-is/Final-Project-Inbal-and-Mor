@@ -19,18 +19,30 @@ from src.for_fun.fun_images_generator import main as fun_visualizations
 DATA_DIR = Path('./data')
 RAW_DATA_DIR = DATA_DIR / 'raw'
 PROCESSED_DATA_DIR = DATA_DIR / 'processed'
+LOGS_DIR = Path('./logs')
+
+# Create logs directory if it doesn't exist
+LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
 # Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(sys.stdout),
-        logging.FileHandler('analysis_pipeline.log')
-    ]
-)
+log_file = LOGS_DIR / 'analysis_pipeline.log'
+file_handler = logging.FileHandler(log_file, mode='w')
+file_handler.setLevel(logging.INFO)
+console_handler = logging.StreamHandler(sys.stdout)
+console_handler.setLevel(logging.INFO)
+
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+file_handler.setFormatter(formatter)
+console_handler.setFormatter(formatter)
+
+# Get the root logger and configure it
+root_logger = logging.getLogger()
+root_logger.setLevel(logging.INFO)
+root_logger.addHandler(file_handler)
+root_logger.addHandler(console_handler)
 
 logger = logging.getLogger(__name__)
+logger.info(f"Starting analysis pipeline. Log file: {log_file}")
 
 def run_pipeline():
     """
