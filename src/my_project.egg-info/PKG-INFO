@@ -10,6 +10,7 @@ Requires-Dist: xgboost
 Requires-Dist: openpyxl
 Requires-Dist: requests
 Requires-Dist: jupyter
+Requires-Dist: kaleido
 Requires-Dist: pandas
 Requires-Dist: numpy
 Requires-Dist: matplotlib

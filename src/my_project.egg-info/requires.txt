@@ -6,6 +6,7 @@ xgboost
 openpyxl
 requests
 jupyter
+kaleido
 pandas
 numpy
 matplotlib

@@ -18,15 +18,21 @@ data/raw/Classes.organized.csv
 data/raw/HGG_DB.csv
 data/raw/PLGG_DB.csv
 data/raw/PLGG_DB_2.csv
-data/raw/brain_image.png
+data/raw/PLGG_Database.xlsx
+data/raw/PLGG_HGG_locations_with_mutations.csv
+data/raw/PLGG_vs_PHGG_Comparison.xlsx
 notebooks/data_analysis.ipynb
 notebooks/data_cleaning.ipynb
+notebooks/finalprojectmor.ipynb
+notebooks/predictmodels.ipynb
 src/__init__.py
 src/data_analysis/__init__.py
 src/data_analysis/data_analysis_hgg.py
 src/data_analysis/data_analysis_joint_plgg_hgg.py
 src/data_analysis/data_analysis_plgg.py
 src/data_analysis/data_cleaning.py
+src/data_analysis/predictmodels.py
+src/for_fun/fun_images_generator.py
 src/my_project.egg-info/PKG-INFO
 src/my_project.egg-info/SOURCES.txt
 src/my_project.egg-info/dependency_links.txt
@@ -37,6 +43,7 @@ tests/test_data_analysis_hgg.py
 tests/test_data_analysis_joint_plgg_hgg.py
 tests/test_data_analysis_plgg.py
 tests/test_data_cleaning.py
+tests/test_predictmodels.py
 visualization/datacleaning/missing_values_heatmap.png
 visualization/datacleaning/missing_values_percentage.png
 visualization/hgganalysis/avg_mutations_by_age_location.png
@@ -62,3 +69,13 @@ visualization/plgganalysis/pathway_involvement_stacked.png
 visualization/plgganalysis/pathway_therapy_analysis.png
 visualization/plgganalysis/therapy_analysis_summary.txt
 visualization/plgganalysis/tumor_types_gene_heatmap.png
+visualization/predictmodel/confusion_matrix_random forest.png
+visualization/predictmodel/confusion_matrix_xgboost.png
+visualization/predictmodel/feature_importance_random forest.png
+visualization/predictmodel/feature_importance_xgboost.png
+visualization/predictmodel/model_comparison.png
+visualization/predictmodel/model_comparison.txt
+visualization/predictmodel/random_forest_report.txt
+visualization/predictmodel/roc_curve_random forest.png
+visualization/predictmodel/roc_curve_xgboost.png
+visualization/predictmodel/xgboost_report.txt
