@@ -77,16 +77,22 @@ The project combines data cleaning, statistical analysis, machine learning, and 
 ## Project Structure
 
 ```
-├── data/                  # Data directory
-│   ├── raw/              # Raw input data
-│   └── processed/        # Cleaned and processed data
-├── logs/                 # Log files directory
-├── notebooks/           # Jupyter notebooks for exploration
-├── src/                 # Source code
-│   ├── data_analysis/   # Analysis modules
-│   └── for_fun/        # Additional visualizations
-├── tests/              # Test files
-└── visualization/      # Generated visualizations
+├── data/                                    # Data directory
+│   ├── raw/                                # Raw input data
+│   └── processed/                          # Cleaned and processed data
+├── logs/                                   # Log files directory
+├── notebooks/                              # Jupyter notebooks for exploration
+├── src/                                    # Source code
+│   ├── data_analysis/                      # Analysis modules
+│   │   ├── data_analysis_hgg.py           # HGG analysis
+│   │   ├── data_analysis_plgg.py          # PLGG analysis
+│   │   ├── data_analysis_joint_plgg_hgg.py # Joint PLGG-HGG analysis
+│   │   └── predictmodels.py               # Predictive modeling
+│   ├── data_cleaning.py                    # Data preprocessing and cleaning
+│   └── for_fun/                           # Additional visualizations
+├── tests/                                  # Test files
+├── visualization/                          # Generated visualizations
+└── main.py                                # Main execution script
 ```
 
 ## Configuration Files
@@ -115,9 +121,8 @@ The project combines data cleaning, statistical analysis, machine learning, and 
 ### Source Code Modules
 
 #### Data Analysis (`src/data_analysis/`)
-- `data_cleaning.py`: Preprocesses and cleans raw data
-- `data_analysis_hgg.py`: Analyzes High-Grade Glioma data
-- `data_analysis_plgg.py`: Analyzes Pediatric Low-Grade Glioma data
+- `data_analysis_hgg.py`: Analyzes HGG
+- `data_analysis_plgg.py`: Analyzes PLGG
 - `data_analysis_joint_plgg_hgg.py`: Performs comparative analysis between HGG and PLGG
 - `predictmodels.py`: Implements predictive modeling capabilities
 

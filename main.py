@@ -8,7 +8,7 @@ import time
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
 # Import analysis modules
-from src.data_analysis.data_cleaning import main as clean_data
+from src.data_cleaning import main as clean_data
 from src.data_analysis.data_analysis_hgg import main as hgg_analysis
 from src.data_analysis.data_analysis_plgg import main as plgg_analysis
 from src.data_analysis.data_analysis_joint_plgg_hgg import JointPLGGHGGAnalysis
