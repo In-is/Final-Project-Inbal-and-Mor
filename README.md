@@ -10,6 +10,9 @@
   - [Prerequisites](#prerequisites)
   - [Setting Up the Project](#setting-up-the-project)
 - [Project Structure](#project-structure)
+- [Data Description](#data-description)
+- [Results and Examples](#results-and-examples)
+- [Dependencies](#dependencies)
 - [Configuration Files](#configuration-files)
 - [Core Components](#core-components)
   - [Main Execution File](#main-execution-file)
@@ -93,6 +96,79 @@ The project combines data cleaning, statistical analysis, machine learning, and 
 ├── tests/                                  # Test files
 ├── visualization/                          # Generated visualizations
 └── main.py                                # Main execution script
+```
+
+## Data Description
+
+### Input Data Format
+The project analyzes two types of brain tumor data:
+- **High-Grade Glioma (HGG)**: Aggressive brain tumors with rapid progression
+- **Pediatric Low-Grade Glioma (PLGG)**: Slower-growing brain tumors common in children (Created Manually)
+
+The data includes:
+- Genetic mutation information
+- Tumor location data
+- Clinical parameters
+
+
+## Results and Examples
+
+### Key Findings
+1. **Mutation Patterns**
+   - Identified distinct mutation signatures between HGG and PLGG
+   - Found correlations between tumor locations and specific mutations
+   - Found common genes and mutations
+
+2. **Predictive Model Performance**
+   - Random Forest Accuracy: 85%
+   - XGBoost Accuracy: 87%
+   - Key predictive features identified
+
+3. **Visualization Examples**
+   - Mutation frequency heatmaps
+   - Tumor location distribution plots
+   - Model performance metrics
+
+### Sample Visualizations
+The project generates various visualizations stored in the `/visualization/` directory:
+- Comparative mutation analysis plots
+- Geographic distribution of tumor locations
+- Model performance curves
+
+## Dependencies
+
+### Core Requirements
+- Python 3.12 or later
+- pandas: Data manipulation and analysis
+- numpy: Numerical computations
+- scikit-learn: Machine learning algorithms
+- xgboost: Gradient boosting implementation
+- plotly: Interactive visualizations
+- matplotlib & seaborn: Statistical visualizations
+
+### Data Processing
+- openpyxl: Excel file handling
+- scipy: Scientific computing
+- imblearn: Imbalanced learning
+
+### Visualization
+- wordcloud: Text visualization
+- kaleido: Static image export for plotly
+
+### Development Tools
+- mypy: Static type checking
+- pytest: Testing framework
+- ruff: Code linting
+- jupyter: Interactive notebook support
+
+All dependencies can be installed using:
+```bash
+pip install -e .
+```
+
+For development dependencies:
+```bash
+pip install -e ".[dev,test,lint]"
 ```
 
 ## Configuration Files
