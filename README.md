@@ -6,6 +6,7 @@
   - [Predictive Modeling](#predictive-modeling)
   - [Data Visualization](#data-visualization)
   - [Clinical Insights](#clinical-insights)
+- [Project Presentation](#project-presentation)
 - [Installation Guide](#installation-guide)
   - [Prerequisites](#prerequisites)
   - [Setting Up the Project](#setting-up-the-project)
@@ -41,6 +42,9 @@ This project is a comprehensive data analysis and machine learning pipeline focu
    - Potential predictive markers for tumor classification
 
 The project combines data cleaning, statistical analysis, machine learning, and visualization techniques to provide insights into brain tumor genetics and classification.
+
+## Project Presentation
+For a comprehensive visual overview of this project, you can view our presentation [here](https://www.canva.com/design/DAGdj3xhnF8/tgH9V-PX5SSFggt1SEYwiQ/view?utm_content=DAGdj3xhnF8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h439c3bee19).
 
 ## Installation Guide
 

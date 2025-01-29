@@ -10,4 +10,4 @@ ROS1,Fusion,16-20y,Diffuse Astrocytoma,Rare; poor outcomes,PI3K/AKT,5
 IDH1,Mutation,14+,High-Grade Glioma,Associated with adult-like gliomas,Unknown,20
 MYBL1,Amplification,0-5y,Low-Grade Glioma,Good prognosis if resectable,Unknown,35
 NTRK,Fusion,Varied,Varied Tumors,Linked to targeted therapy potential,Various,10
-TP53,Mutation,11-20y,High-Grade Glioma,Strong association with gliomagenesis; impacts tumor suppression,TP53 Pathway,5
+TP53,Mutation,11-20y,Low-Grade Glioma,Strong association with gliomagenesis; impacts tumor suppression,TP53 Pathway,5
