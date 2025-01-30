@@ -4,7 +4,7 @@ import numpy as np
 from pathlib import Path
 import os
 
-from data_analysis.data_cleaning import (
+from src.data_cleaning import (
     handle_missing_values,
     remove_duplicates,
     handle_outliers,
