@@ -2,15 +2,26 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+from pathlib import Path
+import logging
 import os
 
-# Create visualization/datacleaning directory if it doesn't exist
-if not os.path.exists('./visualization/datacleaning'):
-    os.makedirs('./visualization/datacleaning')
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
-# Create visualization/datacleaning directory if it doesn't exist
-if not os.path.exists('./data/processed'):
-    os.makedirs('./data/processed')
+# Constants for directories
+DATA_DIR = Path('./data')
+RAW_DATA_DIR = DATA_DIR / 'raw'
+PROCESSED_DATA_DIR = DATA_DIR / 'processed'
+VISUALIZATION_DIR = Path('./visualization/datacleaning')
+
+# Create required directories
+PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)
+VISUALIZATION_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def setup_plot_params() -> None:
@@ -18,9 +29,17 @@ def setup_plot_params() -> None:
     plt.rcParams["figure.figsize"] = (10, 6)
 
 
-def load_and_inspect_data(file_path):
-    """Load and inspect the dataset"""
+def load_and_inspect_data(file_path: Path) -> pd.DataFrame:
+    """Load and inspect the dataset
+    
+    Args:
+        file_path: Path to the input CSV file
+        
+    Returns:
+        pd.DataFrame: Loaded and initially processed dataframe
+    """
     # Read the CSV file
+    logger.info(f"Loading data from {file_path}")
     df = pd.read_csv(file_path)
 
     # Display basic information about the dataset
@@ -67,14 +86,14 @@ def handle_missing_values(df, create_plots=True):
         plt.xlabel("Columns", fontsize=12)
         plt.xticks(rotation=90)
         plt.tight_layout()
-        plt.savefig('./visualization/datacleaning/missing_values_percentage.png')
+        plt.savefig(VISUALIZATION_DIR / 'missing_values_percentage.png')
         plt.close()
 
         # Heatmap of missing values
         plt.figure(figsize=(12, 8))
         sns.heatmap(df.isnull(), yticklabels=False, cbar=True, cmap="coolwarm", cbar_kws={"label": "Missing Values"})
         plt.title("Missing Values Heatmap", fontsize=16)
-        plt.savefig('./visualization/datacleaning/missing_values_heatmap.png')
+        plt.savefig(VISUALIZATION_DIR / 'missing_values_heatmap.png')
         plt.close()
 
     # Replace missing values with 'None' for object columns and median for numeric columns
@@ -120,7 +139,7 @@ def handle_outliers(df, create_plots=True):
         df[numeric_cols].boxplot()
         plt.xticks(rotation=45)
         plt.title("Box Plots for Numerical Columns")
-        plt.savefig('./visualization/datacleaning/numerical_boxplots.png')
+        plt.savefig(VISUALIZATION_DIR / 'numerical_boxplots.png')
         plt.close()
 
     for col in numeric_cols:
@@ -159,13 +178,13 @@ def convert_data_types(df):
 
 
 def main():
-    """Main function to run the data cleaning pipeline"""
+    """Main function to run the data cleaning pipeline."""
     # Setup plot parameters
     setup_plot_params()
-
+    
     # Load and inspect data
-    file_path = "./data/raw/HGG_DB.csv"
-    df = load_and_inspect_data(file_path)
+    input_file = RAW_DATA_DIR / 'HGG_DB.csv'
+    df = load_and_inspect_data(input_file)
 
     # Handle missing values
     df = handle_missing_values(df, create_plots=True)
@@ -180,8 +199,10 @@ def main():
     df = convert_data_types(df)
 
     # Save cleaned data
-    df.to_csv("./data/processed/HGG_DB_cleaned.csv", index=False)
-    print("\nCleaned data saved to ./data/processed/HGG_DB_cleaned.csv")
+    output_file = PROCESSED_DATA_DIR / 'HGG_DB_cleaned.csv'
+    logger.info(f"Saving cleaned data to {output_file}")
+    df.to_csv(output_file, index=False)
+    logger.info("Data cleaning completed successfully")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,144 @@
+2025-02-03 08:26:38,875 - __main__ - INFO - Starting analysis pipeline. Log file: logs\analysis_pipeline.log
+2025-02-03 08:26:38,876 - __main__ - INFO - Starting data cleaning process...
+2025-02-03 08:26:38,876 - src.data_cleaning - INFO - Loading data from data\raw\HGG_DB.csv
+2025-02-03 08:26:39,709 - src.data_cleaning - INFO - Saving cleaned data to data\processed\HGG_DB_cleaned.csv
+2025-02-03 08:26:39,713 - src.data_cleaning - INFO - Data cleaning completed successfully
+2025-02-03 08:26:39,715 - __main__ - INFO - Data cleaning completed successfully
+2025-02-03 08:26:39,716 - __main__ - INFO - Starting HGG analysis...
+2025-02-03 08:26:39,760 - src.data_analysis.data_analysis_hgg - INFO - Data loaded successfully
+2025-02-03 08:26:43,374 - src.data_analysis.data_analysis_hgg - INFO - Analysis completed successfully
+2025-02-03 08:26:43,376 - __main__ - INFO - HGG analysis completed successfully
+2025-02-03 08:26:43,376 - __main__ - INFO - Starting PLGG analysis...
+2025-02-03 08:26:43,380 - src.data_analysis.data_analysis_plgg - INFO - PLGG data loaded successfully
+2025-02-03 08:26:43,383 - src.data_analysis.data_analysis_plgg - INFO - Split PLGG data loaded successfully
+2025-02-03 08:26:43,404 - src.data_analysis.data_analysis_plgg - INFO - Unique genes and mutations analysis completed successfully
+2025-02-03 08:26:43,982 - src.data_analysis.data_analysis_plgg - INFO - Brain location heatmap created successfully
+2025-02-03 08:26:44,624 - src.data_analysis.data_analysis_plgg - INFO - Tumor types analysis completed successfully
+2025-02-03 08:26:45,058 - src.data_analysis.data_analysis_plgg - INFO - Pathway involvement analysis completed successfully
+2025-02-03 08:26:45,412 - src.data_analysis.data_analysis_plgg - INFO - Therapy availability analysis completed successfully
+2025-02-03 08:26:45,794 - src.data_analysis.data_analysis_plgg - INFO - Age tumor frequency analysis completed successfully
+2025-02-03 08:26:46,166 - src.data_analysis.data_analysis_plgg - INFO - Age mutation frequency analysis completed successfully
+2025-02-03 08:26:46,172 - src.data_analysis.data_analysis_plgg - INFO - PLGG analysis completed successfully
+2025-02-03 08:26:46,172 - __main__ - INFO - PLGG analysis completed successfully
+2025-02-03 08:26:46,174 - __main__ - INFO - Starting joint PLGG-HGG analysis...
+2025-02-03 08:26:46,182 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - PLGG unique genes and mutations saved to: visualization\jointhgganalysis\PLGG_Unique_Genes_Mutations.csv
+2025-02-03 08:26:46,187 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - PLGG data processed successfully
+2025-02-03 08:26:46,193 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - HGG data loaded successfully
+2025-02-03 08:26:46,201 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - 
+Found 4 mutations for BRAF in HGG:
+2025-02-03 08:26:46,202 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - V600E at location NBS-midline
+2025-02-03 08:26:46,202 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - V600E at location hemispheric
+2025-02-03 08:26:46,202 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - V600E at location hemispheric
+2025-02-03 08:26:46,204 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - V600E at location hemispheric
+2025-02-03 08:26:46,206 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - 
+Found 48 mutations for TP53 in HGG:
+2025-02-03 08:26:46,206 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R273C at location midline
+2025-02-03 08:26:46,208 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - G245C at location midline
+2025-02-03 08:26:46,209 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - E180fs at location midline
+2025-02-03 08:26:46,210 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - P47_F54fs (LOH) at location midline
+2025-02-03 08:26:46,211 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R158G (LOH) at location midline
+2025-02-03 08:26:46,211 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - A88fs at location midline
+2025-02-03 08:26:46,212 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R213* at location midline
+2025-02-03 08:26:46,212 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R156_R158>R (LOH) at location midline
+2025-02-03 08:26:46,214 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - gE224A  (LOH) at location midline
+2025-02-03 08:26:46,218 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R213*,L252P  (LOH) at location midline
+2025-02-03 08:26:46,219 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R273C,Q144* at location midline
+2025-02-03 08:26:46,219 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - E339*,R248W at location midline
+2025-02-03 08:26:46,219 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - S241F at location midline
+2025-02-03 08:26:46,219 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R273H at location midline
+2025-02-03 08:26:46,222 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - S241Y at location midline
+2025-02-03 08:26:46,222 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R273C (LOH) at location midline
+2025-02-03 08:26:46,222 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R273C (LOH) at location midline
+2025-02-03 08:26:46,223 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - M237I (LOH) at location midline
+2025-02-03 08:26:46,224 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R248Q (LOH) at location midline
+2025-02-03 08:26:46,224 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R273C,K120M at location midline
+2025-02-03 08:26:46,225 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - S241F at location midline
+2025-02-03 08:26:46,225 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - V173A at location midline
+2025-02-03 08:26:46,225 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - H193Y at location midline
+2025-02-03 08:26:46,225 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - C176Y at location midline
+2025-02-03 08:26:46,225 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - L130_N131>L at location midline
+2025-02-03 08:26:46,225 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R174_E180>R at location midline
+2025-02-03 08:26:46,228 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - Y163C at location midline
+2025-02-03 08:26:46,233 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - C135W (LOH) at location NBS-midline
+2025-02-03 08:26:46,233 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R175H (LOH) at location NBS-midline
+2025-02-03 08:26:46,236 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - V157F (LOH) at location NBS-midline
+2025-02-03 08:26:46,236 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - V157F (LOH) at location NBS-midline
+2025-02-03 08:26:46,237 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R175H at location NBS-midline
+2025-02-03 08:26:46,237 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - C135W at location NBS-midline
+2025-02-03 08:26:46,237 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R273H (LOH) at location NBS-midline
+2025-02-03 08:26:46,237 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R249S (LOH) at location NBS-midline
+2025-02-03 08:26:46,237 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R248Q (LOH) at location NBS-midline
+2025-02-03 08:26:46,237 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R175H at location NBS-midline
+2025-02-03 08:26:46,240 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - gR248Q at location hemispheric
+2025-02-03 08:26:46,240 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - gR196* (LOH) at location hemispheric
+2025-02-03 08:26:46,241 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - gR248Q (LOH) at location hemispheric
+2025-02-03 08:26:46,241 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - Q167*,R273H at location hemispheric
+2025-02-03 08:26:46,241 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - G245S (LOH) at location hemispheric
+2025-02-03 08:26:46,241 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R248Q (LOH) at location hemispheric
+2025-02-03 08:26:46,241 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R248W at location hemispheric
+2025-02-03 08:26:46,241 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - E198_G199fs at location hemispheric
+2025-02-03 08:26:46,245 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R342* at location hemispheric
+2025-02-03 08:26:46,247 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - H179D (LOH) at location hemispheric
+2025-02-03 08:26:46,247 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R273C (LOH) at location hemispheric
+2025-02-03 08:26:46,250 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - 
+Found 7 mutations for NF1 in HGG:
+2025-02-03 08:26:46,250 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - I719fs (LOH) at location midline
+2025-02-03 08:26:46,252 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R816*,SV (NF1_CNTN5) at location midline
+2025-02-03 08:26:46,252 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - gR416*,F2176fs at location NBS-midline
+2025-02-03 08:26:46,253 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - Del at location hemispheric
+2025-02-03 08:26:46,253 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - R2237* (LOH) at location hemispheric
+2025-02-03 08:26:46,253 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - L952fs at location hemispheric
+2025-02-03 08:26:46,253 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO -   - S1053* at location hemispheric
+2025-02-03 08:26:46,267 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - HGG unique genes and mutations saved to: visualization\jointhgganalysis\HGG_Unique_Genes_Mutations.csv
+2025-02-03 08:26:46,267 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - Number of shared genes: 3
+2025-02-03 08:26:46,268 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - Number of unique genes in PLGG: 7
+2025-02-03 08:26:46,268 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - Number of unique genes in HGG: 17
+2025-02-03 08:26:46,548 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - Gene frequency comparison completed successfully
+2025-02-03 08:26:46,868 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - Mutation type comparison for braf completed successfully
+2025-02-03 08:26:46,871 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - Brain locations data loaded successfully
+2025-02-03 08:26:47,898 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - Brain locations prevalence plot saved to: visualization\jointhgganalysis\brain_locations_prevalence.png
+2025-02-03 08:26:47,901 - src.data_analysis.data_analysis_joint_plgg_hgg - INFO - Joint PLGG-HGG analysis completed successfully
+2025-02-03 08:26:47,901 - __main__ - INFO - Joint PLGG-HGG analysis completed successfully
+2025-02-03 08:26:47,901 - __main__ - INFO - Starting predictive modeling analysis...
+2025-02-03 08:26:47,903 - src.data_analysis.predictmodels - INFO - Starting predictive modeling analysis
+2025-02-03 08:26:47,905 - src.data_analysis.predictmodels - INFO - Loaded data from data\processed\HGG_DB_cleaned.csv
+2025-02-03 08:26:47,918 - src.data_analysis.predictmodels - INFO - Data preprocessing completed
+2025-02-03 08:26:47,942 - src.data_analysis.predictmodels - INFO - Train-test split and SMOTE balancing completed
+2025-02-03 08:26:48,109 - src.data_analysis.predictmodels - INFO - Random Forest model training completed
+2025-02-03 08:26:48,348 - src.data_analysis.predictmodels - INFO - XGBoost model training completed
+2025-02-03 08:26:51,814 - src.data_analysis.predictmodels - INFO - 
+Random Forest Classification Report:
+2025-02-03 08:26:51,838 - src.data_analysis.predictmodels - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.20      0.25      0.22         4
+           1       0.78      0.78      0.78        18
+           2       0.00      0.00      0.00         1
+
+    accuracy                           0.65        23
+   macro avg       0.33      0.34      0.33        23
+weighted avg       0.64      0.65      0.65        23
+
+2025-02-03 08:26:51,841 - src.data_analysis.predictmodels - INFO - 
+XGBoost Classification Report:
+2025-02-03 08:26:51,849 - src.data_analysis.predictmodels - INFO - 
+              precision    recall  f1-score   support
+
+           0       0.29      0.50      0.36         4
+           1       0.79      0.61      0.69        18
+           2       0.00      0.00      0.00         1
+
+    accuracy                           0.57        23
+   macro avg       0.36      0.37      0.35        23
+weighted avg       0.66      0.57      0.60        23
+
+2025-02-03 08:26:51,853 - src.data_analysis.predictmodels - INFO - Analysis completed successfully
+2025-02-03 08:26:51,853 - src.data_analysis.predictmodels - INFO - Predictive modeling analysis completed successfully
+2025-02-03 08:26:51,855 - __main__ - INFO - Predictive modeling analysis completed successfully
+2025-02-03 08:26:51,856 - __main__ - INFO - Starting fun visualizations...
+2025-02-03 08:26:52,118 - src.for_fun.fun_images_generator - INFO - Comparison data loaded successfully
+2025-02-03 08:26:53,175 - src.for_fun.fun_images_generator - INFO - Sunburst chart saved to visualization\for_fun\plgg_phgg_sunburst.html
+2025-02-03 08:26:54,410 - src.for_fun.fun_images_generator - INFO - Word cloud saved to visualization\for_fun\plgg_phgg_wordcloud.png
+2025-02-03 08:26:54,412 - src.for_fun.fun_images_generator - INFO - Fun visualizations completed successfully
+2025-02-03 08:26:54,412 - __main__ - INFO - Fun visualizations completed successfully
+2025-02-03 08:26:54,412 - __main__ - INFO - Complete pipeline executed successfully in 15.54 seconds

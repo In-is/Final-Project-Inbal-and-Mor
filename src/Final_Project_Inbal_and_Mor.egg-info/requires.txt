@@ -20,8 +20,6 @@ build>=1.2.2
 [dev]
 tox
 
-[doc]
-
 [lint]
 mypy
 ruff
